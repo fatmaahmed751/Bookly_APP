@@ -12,9 +12,9 @@ class BestSellerWidget extends StatelessWidget {
     return Column(
         children: [
           SizedBox(
-            height: MediaQuery.of(context).size.height * .35,
+            height: MediaQuery.of(context).size.height * .33,
             child: AspectRatio(
-              aspectRatio: 6 / 9,
+              aspectRatio: 5 / 9,
               child: Container(
                 // width: 60,
                 // height: 100,

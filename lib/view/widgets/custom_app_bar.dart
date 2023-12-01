@@ -12,7 +12,7 @@ class CustomAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding:
-      const EdgeInsets.only(top: 0, bottom: 270, right: 20),
+      const EdgeInsets.only(top: 0, bottom: 200, right: 20),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
@@ -28,7 +28,9 @@ class CustomAppBar extends StatelessWidget {
           ),
           const Spacer(),
           IconButton(
-              onPressed: () {},
+              onPressed: () {
+
+              },
               icon: const Icon(
                 Icons.menu_sharp,
                 size: 22,

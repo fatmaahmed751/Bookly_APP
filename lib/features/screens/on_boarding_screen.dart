@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:go_router/go_router.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 //import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../../core/componenets.dart';
 import '../../core/constants.dart';
+import '../../core/utils/app_router.dart';
 import 'first_screen.dart';
 class OnBoardingModel{
   final String image;
@@ -31,7 +32,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
     OnBoardingModel(
         image: 'assets/images/bibliophile.png',
         text: 'Discounted Secondhand Books',
-        subText: 'Used and near new secondhand books at great prices'
+        subText: 'Used and near new secondhand\n books at great prices'
     ),
     OnBoardingModel(
         image: 'assets/images/undraw_business_shop.png',
@@ -56,7 +57,8 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
               {
                 print(onBoarding.length);
                 isLast= true;
-                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const FirstScreen()));
+                GoRouter.of(context).push(AppRouter.homeScreen);
+              //  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const FirstScreen()));
               }else{
                 isLast= false;
                 print(isLast);

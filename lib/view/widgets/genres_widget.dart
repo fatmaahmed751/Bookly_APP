@@ -8,10 +8,11 @@ class GenresWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return     Container(
-      height:200 ,
+      height:180 ,
       width: 270,
-      decoration: const BoxDecoration(
+      decoration:  BoxDecoration(
         color: Color(0xff1C4A7E),
+        borderRadius: BorderRadius.circular(12)
       ) ,
       child: Center(
         child: Image.asset('assets/images/group_one.png',

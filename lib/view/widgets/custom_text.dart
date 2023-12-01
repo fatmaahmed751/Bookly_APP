@@ -39,8 +39,9 @@ class CustomText extends StatelessWidget {
             fontSize: size,
             fontWeight: fontWeight,
             height: heigtText,
-            fontFamily: 'NotoSerifHebrew',
+            fontFamily:'Bacute Regular',
           ),
     );
   }
 }
+//'NotoSerifHebrew'

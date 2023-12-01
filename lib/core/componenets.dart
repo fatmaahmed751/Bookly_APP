@@ -60,7 +60,6 @@ Widget screenText({
 );
 
 Widget defaultFormField({
-
   required String hintText,
   required TextEditingController controller,
   required TextInputType type,
@@ -70,12 +69,8 @@ Widget defaultFormField({
   //required Widget prefixIcon,
   Widget?suffixIcon,
   bool obscureText = false,
-  String? value,
-
-
-
-}) =>
-    Padding(
+  String? value
+}) => Padding(
       padding: const EdgeInsets.symmetric(vertical: 10,horizontal: 15),
       child: Container(
 
@@ -102,26 +97,27 @@ Widget defaultFormField({
             fillColor: Colors.blueGrey[50] ,
             filled: true,
              border: OutlineInputBorder(
-            //   borderSide: BorderSide(
-            //       color: Colors.deepOrangeAccent.withOpacity(1.0)),
+              borderSide: const BorderSide(
+                  color: Colors.transparent),
               borderRadius: BorderRadius.circular(101),
             ),
             enabledBorder: OutlineInputBorder(
-              //borderSide: BorderSide(
-                  //color: Colors.deepOrangeAccent.withOpacity(1.0)),
+              borderSide: const BorderSide(
+                  color: Colors.transparent),
               borderRadius: BorderRadius.circular(201),
             ),
-            // focusedBorder: OutlineInputBorder(
-            //   borderSide: BorderSide(
-            //       color: Colors.deepOrangeAccent.withOpacity(1.0)),
-            //   borderRadius: BorderRadius.circular(201),
-            // ),
+            focusedBorder: OutlineInputBorder(
+              borderSide: const BorderSide(
+                  color: Colors.transparent),
+              borderRadius: BorderRadius.circular(201),
+            ),
+            hintText: hintText,
             labelText: labelText,
             labelStyle: TextStyle(
               color:Colors.grey[700],
             ),
 
-            contentPadding: EdgeInsets.only(left: 25),
+            contentPadding: const EdgeInsets.only(left: 25),
 
           ),
         ),
