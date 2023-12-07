@@ -1,6 +1,7 @@
 import 'package:bookly_app/features/home/data/models/BestSellerBooks.dart';
 import 'package:bookly_app/features/home/presentation/manager/home_cubit/home_states.dart';
 import 'package:bookly_app/features/home/presentation/widgets/custom_error_message.dart';
+import 'package:bookly_app/features/home/presentation/widgets/rating_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -69,28 +70,9 @@ class BestSellerList extends StatelessWidget {
           height: 10,
         ),
         authorName(text: 'Fatherhood'),
-        RatingBar.builder(
-
-          minRating: 1,
-          //  direction: isVertical ? Axis.vertical : Axis.horizontal,
-          allowHalfRating: true,
-          unratedColor: AppColors.primaryColor.withOpacity(0.2),
-          itemCount: 5,
-          itemSize: 20.0,
-          itemPadding: const EdgeInsets.symmetric(horizontal: 2.0),
-          itemBuilder: (context, index) =>
-              Icon(
-                // selectedIcon ??
-                Icons.star,
-                color: AppColors.primaryColor,
-              ),
-          onRatingUpdate: (rating) {
-            // setState(() {
-            // rating = rating;
-            // });
-          },
-          updateOnDrag: true,
-        ),
+        const RateWidget(),
       ]
   );
 }
+
+

@@ -64,7 +64,6 @@ class OurBookScreen extends StatelessWidget {
                                   color: Colors.grey[400]!, blurRadius: 30),
                             ],
                           ),
-//color: Colors.red,
                           padding: const EdgeInsets.only(left: 5, top: 20),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,

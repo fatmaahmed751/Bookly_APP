@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/constants.dart';
 import '../../../../views/widgets/custom_text.dart';
+import '../../../auth_and_register/presentation/view/profile_screen.dart';
 import '../view/our_book_screen.dart';
 import 'drawer_row_item.dart';
 
@@ -88,7 +89,7 @@ Widget listItemsOfDrawer(context) => Column(
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => const OurBookScreen()));
+                      builder: (context) => const ProfileScreen()));
 // GoRouter.of(context).push(AppRouter.ourBookScreen);
             },
             mainText: 'Account',
