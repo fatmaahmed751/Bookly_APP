@@ -1,6 +1,7 @@
 import 'package:bookly_app/core/constants.dart';
 import 'package:bookly_app/core/utils/app_router.dart';
 import 'package:bookly_app/features/home/data/repos/home_repo_implment.dart';
+import 'package:bookly_app/views/screens/on_boarding_screen.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -36,7 +37,7 @@ class BooklyApp extends StatelessWidget {
       ),
     ],
       child: MaterialApp(
-        home:const SearchResults(),
+        home:const OnBoardingScreen(),
           //.router(
         //routerConfig: AppRouter.router,
         theme:ThemeData.light(

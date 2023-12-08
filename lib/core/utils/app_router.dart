@@ -3,7 +3,9 @@ import 'package:go_router/go_router.dart';
 
 
 import '../../features/Drawer/presentation/view/our_book_screen.dart';
+import '../../features/auth_and_register/presentation/view/login_screen.dart';
 import '../../features/auth_and_register/presentation/view/profile_screen.dart';
+import '../../features/auth_and_register/presentation/view/register_screen.dart';
 import '../../features/search/presentation/view/search_screen.dart';
 import '../../features/home/presentation/view/home_screen.dart';
 import '../../views/screens/on_boarding_screen.dart';
@@ -15,6 +17,8 @@ abstract class AppRouter {
   static const searchScreen = '/SearchScreen';
   static const profileScreen = '/ProfileScreen';
   static const ourBookScreen = '/OurBookScreen';
+  static const loginScreen = '/LoginScreen';
+  static const registerScreen = '/RegisterScreen';
   static final GoRouter router = GoRouter(
       routes: [
     GoRoute(
@@ -27,6 +31,16 @@ abstract class AppRouter {
       builder: (BuildContext context, GoRouterState state) =>
         const  OnBoardingScreen(),
     ),
+        GoRoute(
+          path: loginScreen,
+          builder: (BuildContext context, GoRouterState state) =>
+          const  LoginScreen(),
+        ),
+        GoRoute(
+          path: registerScreen,
+          builder: (BuildContext context, GoRouterState state) =>
+          const  RegisterScreen(),
+        ),
         GoRoute(
           path: ourBookScreen,
           builder: (BuildContext context, GoRouterState state) =>

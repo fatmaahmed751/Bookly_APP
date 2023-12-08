@@ -55,15 +55,16 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
           child: PageView.builder(
             controller: boardController,
             onPageChanged: (int index){
-              if(index == onBoarding.length ){
+              if(index == onBoarding.length-1 ){
               // if(index == onBoarding.length-1)
               // {
-              //   print(onBoarding.length);
+           print(onBoarding.length);
+           Future.delayed(const Duration(seconds:2));
               //   isLast= true;
-                GoRouter.of(context).push(AppRouter.homeScreen);
-              //  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const FirstScreen()));
+                //GoRouter.of(context).push(AppRouter.homeScreen);
+               Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const FirstScreen()));
               }else{
-                isLast= false;
+                isLast = false;
                 print(isLast);
               }
             },

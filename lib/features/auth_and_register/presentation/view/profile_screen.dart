@@ -2,6 +2,7 @@ import 'package:bookly_app/core/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import '../../../../core/componenets.dart';
 import '../../../../views/widgets/custom_text.dart';
 import '../../../home/presentation/widgets/list_view_top_picks.dart';
 import '../../../home/presentation/widgets/rating_widget.dart';
@@ -24,19 +25,7 @@ class ProfileScreen extends StatelessWidget {
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
             children: [
-              Align(
-                alignment:Alignment.topLeft,
-                child: IconButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                  icon: Icon(
-                    FontAwesomeIcons.angleLeft,
-                    size: 22,
-                    color: AppColors.primaryColor,
-                  ),
-                ),
-              ),
+              backNavigation(context),
               const UserInformation(),
               const StackWidget(),
               Padding(
@@ -60,5 +49,4 @@ class ProfileScreen extends StatelessWidget {
     );
   }
 }
-
 

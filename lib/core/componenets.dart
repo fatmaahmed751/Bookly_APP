@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'constants.dart';
 
@@ -59,6 +60,22 @@ Widget screenText({
 
 );
 
+
+Widget backNavigation(context)=>  Align(
+  alignment:Alignment.topLeft,
+  child: IconButton(
+    onPressed: () {
+      Navigator.pop(context);
+    },
+    icon: Icon(
+      FontAwesomeIcons.angleLeft,
+      size: 22,
+      color: AppColors.primaryColor,
+    ),
+  ),
+);
+
+
 Widget defaultFormField({
   required String hintText,
   required TextEditingController controller,
@@ -73,11 +90,8 @@ Widget defaultFormField({
 }) => Padding(
       padding: const EdgeInsets.symmetric(vertical: 10,horizontal: 15),
       child: Container(
-
         width: 300,
         height: 60,
-        // padding: EdgeInsets.all(8),
-
         decoration: BoxDecoration(
           //  color: Colors.red,
           borderRadius: BorderRadius.circular(200),
@@ -114,12 +128,146 @@ Widget defaultFormField({
             hintText: hintText,
             labelText: labelText,
             labelStyle: TextStyle(
-              color:Colors.grey[700],
+              fontSize: 15,
+              color:AppColors.secondTextColor
             ),
 
             contentPadding: const EdgeInsets.only(left: 25),
 
           ),
+        ),
+      ),
+    );
+
+Widget stayLoginIn({
+  required String text,
+  String secText='',
+})=>Padding(
+  padding: const EdgeInsets.all(10.0),
+  child:   Row(
+
+    children: [
+
+      IconButton(
+
+        onPressed:(){},
+
+        icon:  Icon(Icons.check_box_outline_blank_outlined,
+        color: AppColors.secondTextColor,),
+
+      ),
+
+    Text(
+
+    textAlign:TextAlign.center,
+
+  text,
+
+    //maxLines: 2,
+
+    style:  TextStyle(
+
+      // overflow: TextOverflow.ellipsis,
+
+
+
+        decoration: TextDecoration.none,
+
+        fontFamily: 'Bacute Regular',
+
+        fontSize: 12,
+
+        fontWeight:FontWeight.w200 ,
+
+        color: AppColors.secondTextColor
+
+    ),
+
+
+
+  ),
+
+      const Spacer(),
+
+      Text(
+
+        textAlign:TextAlign.center,
+
+        secText,
+
+        //maxLines: 2,
+
+        style:  TextStyle(
+
+          // overflow: TextOverflow.ellipsis,
+
+
+
+            decoration: TextDecoration.none,
+
+            fontFamily: 'Bacute Regular',
+
+            fontSize: 12,
+
+            fontWeight:FontWeight.w200 ,
+
+            color: AppColors.secondTextColor
+
+        ),
+
+
+
+      ),
+
+    ],
+
+  ),
+);
+
+Widget signInText({
+  required String text,
+})=>Text(
+  textAlign:TextAlign.left,
+  text,
+  //maxLines: 2,
+  style:  const TextStyle(
+    // overflow: TextOverflow.ellipsis,
+
+      decoration: TextDecoration.none,
+      fontFamily: 'Bacute Regular',
+      fontSize: 33,
+      fontWeight:FontWeight.w500 ,
+      color: AppColors.textColor
+  ),
+
+);
+
+
+Widget defaultLogInButton({
+  required String text,
+  required Function function,
+}) =>
+    Container(
+      margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+      padding: const EdgeInsets.all(8.0),
+      width: 335,
+      height: 60,
+      decoration: BoxDecoration(
+          color:Colors.transparent,
+          //  const Color.fromRGBO(252,96 ,17 ,80 ) ,
+          border: Border.all(
+              width: 1.0,
+              color:AppColors.primaryColor
+          ),
+          borderRadius: BorderRadius.circular(20)),
+      clipBehavior: Clip.hardEdge,
+      child: TextButton(
+        onPressed:(){
+          function();
+          } ,
+        child: Text(
+          text,
+          style: TextStyle(color: AppColors.primaryColor, fontSize: 22),
         ),
       ),
     );

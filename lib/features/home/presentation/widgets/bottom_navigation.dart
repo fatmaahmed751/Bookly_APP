@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../../../core/constants.dart';
 import '../../../../core/utils/app_router.dart';
+import '../../../search/presentation/view/search_screen.dart';
 
 class  BottomNavigation extends  StatelessWidget {
   final DrawerController _drawerController = const DrawerController(
@@ -72,7 +73,8 @@ class  BottomNavigation extends  StatelessWidget {
                         padding: const EdgeInsets.all(0),
                         icon: const Icon(Icons.search),
                         onPressed: () {
-                          GoRouter.of(context).push(AppRouter.searchScreen);
+                          Navigator.push(context, MaterialPageRoute(builder:( context)=>const SearchScreen()));
+                         // GoRouter.of(context).push(AppRouter.searchScreen);
                         }
                     ),
                   ),

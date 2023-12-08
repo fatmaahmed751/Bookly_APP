@@ -13,39 +13,38 @@ class DrawerContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      child: Container(
-        width: 100,
-        height: 840,
-        decoration: BoxDecoration(
-          color: Colors.grey[300],
-          border: Border.all(
-            color: Colors.white,
-            width: 10,
-            style: BorderStyle.none,
-          ),
-          boxShadow: const [
-            BoxShadow(color: Colors.grey, blurRadius: 20),
-          ],
-          borderRadius: const BorderRadius.only(
-            bottomLeft: Radius.circular(170),
-            topRight: Radius.circular(10),
-          ),
+    return Container(
+      width: 300,
+      height: 840,
+      decoration: BoxDecoration(
+        //color: Colors.red,
+        color: Colors.grey[300],
+        border: Border.all(
+          color: Colors.white,
+          width: 10,
+          style: BorderStyle.none,
         ),
-        child: Column(
-            crossAxisAlignment: CrossAxisAlignment.end,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const SizedBox(height: 100),
-              SizedBox(
-                height: 500,
-                child: Padding(
-                  padding: const EdgeInsets.only(right: 8.0),
-                  child:listItemsOfDrawer(context),
-                ),
-              )
-            ]),
+        boxShadow: const [
+          BoxShadow(color: Colors.grey, blurRadius: 20),
+        ],
+        borderRadius: const BorderRadius.only(
+          bottomLeft: Radius.circular(170),
+          topRight: Radius.circular(10),
+        ),
       ),
+      child: Column(
+          crossAxisAlignment: CrossAxisAlignment.end,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const SizedBox(height: 100),
+            SizedBox(
+              height: 500,
+              child: Padding(
+                padding: const EdgeInsets.only(right: 8.0),
+                child:listItemsOfDrawer(context),
+              ),
+            )
+          ]),
     );
   }
 }
