@@ -172,6 +172,8 @@ class Items {
 
 SearchInfo searchInfoFromJson(String str) => SearchInfo.fromJson(json.decode(str));
 String searchInfoToJson(SearchInfo data) => json.encode(data.toJson());
+
+
 class SearchInfo {
   SearchInfo({
     String? textSnippet,}){

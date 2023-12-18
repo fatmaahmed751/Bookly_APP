@@ -13,6 +13,7 @@ class FirstScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Container(
+      padding: const EdgeInsets.only(top: 50),
       color:AppColors.kPrimaryColor,
       child: Column(
         crossAxisAlignment:CrossAxisAlignment.center,
@@ -34,6 +35,11 @@ const SizedBox(height: 20,),
             Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const RegisterScreen()));
            // GoRouter.of(context).push(AppRouter.registerScreen);
           }),
+         // Image.network('https://i.pinimg.com/564x/df/8d/b1/df8db16625d8521bafbcdb3ece941817.jpg')
+          Image.asset('assets/images/on_board_images/remove.png',
+          width: 300,
+          height: 350,
+          alignment: Alignment.bottomCenter,),
 
 // CustomAppBar(
 //   title: 'Sign In',

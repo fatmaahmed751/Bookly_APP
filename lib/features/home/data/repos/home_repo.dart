@@ -7,6 +7,12 @@ import '../models/book_model.dart';
 
 abstract class HomeRepo{
  Future<Either<Failure,List<BestSellerBooks>>> fetchBestSellerBooks();
- Future<Either<Failure,List<BookModel>>> fetchFeaturedBooks();
- Future<Either<Failure,List<GenresBooks>>> fetchGenresBooks();
+
+ Future<Either<Failure,List<BestSellerBooks>>> fetchTopPickBooks();
+
+ Future<Either<Failure,List<BestSellerBooks>>> fetchSearchBooks(String value);
 }
+
+// Future<Either<Failure,List<BestSellerBooks>>> fetchTopPickBooks();
+//
+// Future<Either<Failure,List<BestSellerBooks>>> fetchSearchBooks();

@@ -19,20 +19,24 @@ class OurBookScreen extends StatelessWidget {
                 //fit : StackFit.passthrough,
                 alignment: Alignment.bottomCenter,
                 children: [
+
                   Container(
+
                     //padding: const EdgeInsets.only(bottom: 0),
                     height: 400,
                     width: 450,
                     decoration: BoxDecoration(
-                      color: Colors.green[100],
+                      color: Colors.lightGreen[400],
                       borderRadius: const BorderRadius.only(
                           bottomLeft: (Radius.circular(120)),
                           bottomRight: Radius.circular(120)),
                     ),
                     child: Column(
                       children: [
+
                         Padding(
                           padding: const EdgeInsets.only(top: 80.0),
+
                           child: Row(
                               //crossAxisAlignment: CrossAxisAlignment.start,
                               // mainAxisAlignment: MainAxisAlignment.start,
@@ -49,8 +53,12 @@ class OurBookScreen extends StatelessWidget {
                                   textAlign: TextAlign.center,
                                   fontWeight: FontWeight.w300,
                                   size: 26,
-                                )),
-
+                                )
+                                ),
+                                const SizedBox(
+                                  width:2,
+                                ),
+                                Image.asset('assets/images/e.png'),
                                 const Spacer(),
                                 Image.asset('assets/images/leftimage.png'),
                               ]),
@@ -86,6 +94,7 @@ class OurBookScreen extends StatelessWidget {
                             ],
                           ),
                         ),
+
                       ],
                     ),
                   ),

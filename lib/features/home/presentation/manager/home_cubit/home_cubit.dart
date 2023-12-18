@@ -6,6 +6,7 @@ import 'home_states.dart';
 class HomeCubit extends Cubit<HomeStates>{
   HomeCubit(this.homeRepo) : super(HomeInitialState());
   final HomeRepo homeRepo;
+  static HomeCubit get(context) => BlocProvider.of(context);
 
   Future<void> fetchBestSellerBooks() async{
     emit(HomeBestSellerLoadingState());
@@ -15,12 +16,21 @@ class HomeCubit extends Cubit<HomeStates>{
             (books) => emit(HomeBestSellerSuccessState(books)));
   }
 
-  Future<void> fetchGenresBooks() async{
-    emit(HomeGenresLoadingState());
-    var result = await homeRepo.fetchGenresBooks();
+  Future<void> fetchTopPickBooks() async{
+    emit(HomeTopPickLoadingState());
+    var result = await homeRepo.fetchTopPickBooks();
     result.fold((failure) =>
-        emit(HomeGenresFailureState(failure.errMessage)),
-            (books) => emit(HomeGenresSuccessState(books)));
+        emit(HomeTopPickFailureState(failure.errMessage)),
+            (topPicksBook) => emit(HomeTopPickSuccessState(topPicksBook)));
+
+  }
+
+  Future<void> fetchSearchBooks(String value) async{
+    emit(HomeSearchLoadingState());
+    var result = await homeRepo.fetchSearchBooks(value);
+    result.fold((failure) =>
+        emit(HomeSearchFailureState(failure.errMessage)),
+            (resultSearchBooks) => emit(HomeSearchSuccessState(resultSearchBooks)));
   }
 
 

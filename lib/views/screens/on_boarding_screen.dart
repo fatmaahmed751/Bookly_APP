@@ -32,19 +32,21 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
 
   List<OnBoardingModel> onBoarding = [
     OnBoardingModel(
-        image: 'assets/images/bibliophile.png',
+        image: 'assets/images/on_board_images/girl.png',
         text: 'Discounted Secondhand Books',
         subText: 'Used and near new secondhand\n books at great prices'
     ),
     OnBoardingModel(
-        image: 'assets/images/undraw_business_shop.png',
+        image: 'assets/images/on_board_images/read-removebg-preview.png',
+        //image: 'assets/images/on_board_images/boy.png',
         text: '20 Book Grocers Nationally',
-        subText: 'We\'ve successfully opened 20 stores across Australia'
+        subText: 'We\'ve successfully opened\n 20 stores across Australia'
     ),
     OnBoardingModel(
-        image: 'assets/images/undraw_collecting_fj.png',
+        image: 'assets/images/on_board_images/boy.png',
+       // image: 'assets/images/on_board_images/female.png',
         text: 'Sell or Recycle Your Old Books With Us',
-        subText: 'If you\'re looking to downsize, sell or recycle old books, we can help'),
+        subText: 'If you\'re looking to downsize\n sell or recycle old books, we can help'),
   ];
   bool isLast = false;
 
@@ -54,12 +56,13 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
       body: SafeArea(
           child: PageView.builder(
             controller: boardController,
-            onPageChanged: (int index){
+            onPageChanged: (int index)async{
+             // BuildContext pageContext = context;
               if(index == onBoarding.length-1 ){
               // if(index == onBoarding.length-1)
               // {
            print(onBoarding.length);
-           Future.delayed(const Duration(seconds:2));
+           await Future.delayed(const Duration(seconds:1));
               //   isLast= true;
                 //GoRouter.of(context).push(AppRouter.homeScreen);
                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const FirstScreen()));
@@ -102,7 +105,15 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
 
             Container(
               height:400,
-              child: Image(image: AssetImage("${model.image}"),
+              width: 400,
+              // decoration:  BoxDecoration(
+              //   color: Colors.red,
+              //   image: DecorationImage(
+              //     image: AssetImage(model.image),
+              //     fit: BoxFit.fill,
+              //   ),
+              // ),
+            child: Image(image: AssetImage("${model.image}"),
               ),
             ),
             const SizedBox(height: 20),

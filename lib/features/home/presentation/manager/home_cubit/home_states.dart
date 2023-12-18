@@ -1,10 +1,13 @@
 import '../../../data/models/BestSellerBooks.dart';
 import '../../../data/models/GenresBooks.dart';
+import '../../../data/models/book_model.dart';
 
 class HomeStates{}
 
 class HomeInitialState extends HomeStates{}
+
 class HomeBestSellerLoadingState extends HomeStates{}
+
 class HomeBestSellerSuccessState extends HomeStates{
   final List<BestSellerBooks> books;
    HomeBestSellerSuccessState(this.books);
@@ -15,13 +18,29 @@ class HomeBestSellerFailureState extends HomeStates{
   HomeBestSellerFailureState(this.errorMessage);
 }
 
-class HomeGenresLoadingState extends HomeStates{}
-class HomeGenresSuccessState extends HomeStates{
-  final List<GenresBooks> books;
-  HomeGenresSuccessState(this.books);
+class HomeTopPickLoadingState extends HomeStates{}
+
+class HomeTopPickSuccessState extends HomeStates{
+
+  final List<BestSellerBooks> topPicksBook;
+  HomeTopPickSuccessState(this.topPicksBook);
 }
-class HomeGenresFailureState extends HomeStates{
+
+class HomeTopPickFailureState extends HomeStates{
   final String errorMessage;
 
-  HomeGenresFailureState(this.errorMessage);
+  HomeTopPickFailureState(this.errorMessage);
+}
+class HomeSearchLoadingState extends HomeStates{}
+
+class HomeSearchSuccessState extends HomeStates{
+
+  final List<BestSellerBooks> resultSearchBooks;
+  HomeSearchSuccessState(this.resultSearchBooks);
+}
+
+class HomeSearchFailureState extends HomeStates {
+  final String errorMessage;
+
+  HomeSearchFailureState(this.errorMessage);
 }

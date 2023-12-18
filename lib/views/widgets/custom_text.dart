@@ -32,6 +32,7 @@ class CustomText extends StatelessWidget {
       overflow: textOverflow,
       maxLines: maxLines,
       textAlign: textAlign,
+      selectionColor:Colors.red,
       style: textStyle ??
           TextStyle(
             decoration: TextDecoration.none,

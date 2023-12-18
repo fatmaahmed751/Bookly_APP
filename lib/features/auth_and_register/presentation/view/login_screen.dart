@@ -41,13 +41,15 @@ class LoginScreen extends StatelessWidget {
               Text(
                 "Don't have an account?",
                 style: TextStyle(
-                    fontSize: 16,
+                    fontSize: 15,
                     fontWeight: FontWeight.bold,
                     color: AppColors.secondTextColor),
               ),
              TextButton(
                child:Text(
                   'Sign In',
+                   style: TextStyle(color: AppColors.primaryColor, fontSize: 15
+               ),
                ),
                   onPressed: () {
                     Navigator.push(

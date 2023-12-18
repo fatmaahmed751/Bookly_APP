@@ -27,9 +27,9 @@ class StackWidget extends StatelessWidget {
           padding: const EdgeInsets.only(left: 19,bottom: 20),
           child: ListView.separated(
               scrollDirection: Axis.horizontal,
-              itemBuilder: (context, index) => purchasesBook(context),
+              itemBuilder: (context, index) => PurchasesBookItem(imageIndex:index),
               separatorBuilder: (context, index) => const SizedBox(
-                width: 10,
+                width: 2,
               ),
               itemCount: 5),
         ),

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../core/constants.dart';
+import '../screens/on_boarding_screen.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -18,7 +19,7 @@ class _SplashViewBodyState extends State<SplashViewBody> with SingleTickerProvid
   @override
   void initState() {
     super.initState();
-    animationMethod();
+  animationMethod();
     navigationMethod();
   }
 
@@ -36,15 +37,15 @@ class _SplashViewBodyState extends State<SplashViewBody> with SingleTickerProvid
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
-              width: 360,
+              width: 300,
               //  MediaQuery.of(context).size.width,
-              height: 260,
+              height: 420,
               //MediaQuery.of(context).size.height ,
               decoration: const BoxDecoration(
-                // color: Colors.red,
+              //  color: Colors.red,
                 image: DecorationImage(
-                  image: AssetImage('assets/images/booki.jpg'),
-                  fit: BoxFit.scaleDown,
+                  image: AssetImage('assets/images/on_board_images/splash.png'),
+                  fit: BoxFit.fill,
                 ),
               ),
             ),
@@ -64,7 +65,7 @@ class _SplashViewBodyState extends State<SplashViewBody> with SingleTickerProvid
                         //decoration: TextDecoration.lineThrough,
                         textBaseline: TextBaseline.alphabetic,
                         color: AppColors.primaryColor,
-                        fontSize: 36,
+                        fontSize: 32,
                         fontWeight: FontWeight.w500,
                         overflow: TextOverflow.ellipsis,
 
@@ -82,9 +83,9 @@ class _SplashViewBodyState extends State<SplashViewBody> with SingleTickerProvid
     try {
       print('hhhhhhhhhhhhhh');
       Future.delayed(const Duration(seconds:3), () {
-GoRouter.of(context).push(AppRouter.onBoardingScreen);
-        // Navigator.pushReplacement(
-        //     context, MaterialPageRoute(builder: (_) => OnBoardingScreen()));
+//GoRouter.of(context).push(AppRouter.onBoardingScreen);
+        Navigator.pushReplacement(
+            context, MaterialPageRoute(builder: (_) => const OnBoardingScreen()));
         print('object');
       });
     } catch (e) {
